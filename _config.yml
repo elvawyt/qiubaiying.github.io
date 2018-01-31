@@ -2,8 +2,8 @@
 title: Go Hoos
 SEOTitle: Yutong Wang | Go Hoos
 header-img: img/post-bg-desk.jpg
-email: qiubaiying@gmail.com
-description: "Tomorrow is another day."
+email: elvawangyutong@gmail.com
+description: "Tomorrocomw is another day."
 keyword: "elvawyt, yutong wang, UVA, software engineering, java, python"
 url: "http://elvawyt.github.io"          # your host, for absolute URL
 baseurl: ""      # for example, '/blog' if your blog hosted on 'host/blog'
@@ -56,7 +56,7 @@ kramdown:
 
 # 评论系统
 # Disqus settings（https://disqus.com/）
-disqus_username: qiubaiying
+#disqus_username: qiubaiying
 
 
 
@@ -65,11 +65,11 @@ disqus_username: qiubaiying
 
 # Analytics settings
 # Baidu Analytics
-ba_track_id: b50bf2b12b5338a1845e33832976fd68
+#ba_track_id: b50bf2b12b5338a1845e33832976fd68
 
 # Google Analytics
-ga_track_id: 'UA-90855596-1'            # Format: UA-xxxxxx-xx
-ga_domain: auto
+#ga_track_id: 'UA-90855596-1'            # Format: UA-xxxxxx-xx
+#ga_domain: auto
 
 
 
