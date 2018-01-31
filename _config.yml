@@ -11,8 +11,8 @@ github_repo: "https://github.com/elvawyt/elvawyt.github.io.git" # you code repos
 
 # Sidebar settings
 sidebar: true                           # whether or not using Sidebar.
-sidebar-about-description: "Goals determine what you going to be!"
-sidebar-avatar: /img/about-BY-gentle.jpg      # use absolute URL, seeing it's used in both `/` and `/about/`
+sidebar-about-description: "Alright, have a good day!"
+sidebar-avatar: /img/datou.jpeg      # use absolute URL, seeing it's used in both `/` and `/about/`
 
 
 
