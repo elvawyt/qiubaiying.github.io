@@ -1,0 +1,94 @@
+\input{CS6316.tex}%for different course, change the commented lines in this file
+\usepackage{graphicx,amssymb,amsmath,bm}
+\usepackage{newcommand}
+\sloppy
+\newcommand{\ignore}[1]{}
+
+\oddsidemargin 0in
+\evensidemargin 0in
+\textwidth 6.5in
+\topmargin -0.5in
+\textheight 9.0in
+
+\begin{document}
+
+\homework{Spring 2018}{$1$}{Yutong Wang}{yw4ku}
+\begin{footnotesize}
+	\begin{itemize}
+		\item Feel free to talk to other students in the class when doing the homework. You should, however,
+		write down your solution yourself.  Please try to keep the solution brief and clear.
+		%\item Each problem has the same weight.
+		%\item You will write your solution in Latex and submit the printed pdf file in class.
+		\item You will write your solution in LaTeX and submit the printed pdf file in class. You also need to
+		submit the zipped Latex files to Collab
+		\item The first page of your submission should include the pledge followed by your signature.
+		\item The homework is due at 5:00 PM (before the class) on the due date. 
+	\end{itemize}
+\end{footnotesize}
+
+Pledge: On my honor, I pledge that I have neither given nor received help on this assignment
+Signature: Yutong Wang
+%\vspace{1.5cm}
+
+\begin{enumerate}
+	
+\item[1.] From the defination we know that: $L_s(h)$ = $\frac{1}{m}\vert\{i:h(x_i) \ne f(x_i)\}\vert$, so the expected value of $L_s(h)$ over the choice of S$\vert_x$ can be denoted as:\\ 
+\begin{center}
+$E_{S\vert_{x\sim D^m}}[L_s(h)] = E_{S\vert_{x\sim D^m}}[\frac{1}{m}\sum_{i = 1}^m1_{h(x_i)\ne f(x_i)}] $
+\end{center}
+
+Because $x_i$ is i.i.d, and also from the linearity of expectation we can know that\\
+\begin{center}
+$E_{S\vert_{x\sim D^m}}[L_s(h)]$ = $1 * P(f(x_i)\ne h(x_i)) + 0 * P(f(x_i) = h(x_i)))$
+\end{center}
+
+\begin{center}
+$E_{S\vert_{x\sim D^m}}[L_s(h)]$ = $P(f(x_i)\ne h(x_i))$
+\end{center}
+\\
+Also, because $L_{(D,f)}(h)$ = $\mathbb{P}_{x\sim D}[h(x) \ne f(x)]$, so we can conclude that
+$E_{S\vert_{x\sim D^m}}[L_s(h)] = L_{(D,f)}(h)$.
+
+
+\item[2.]
+ \begin{enumerate}
+     \item 
+     The empirical risk minimization principle states that the learning algorithm should choose a hypothesis $h \in H$ which minimizes the empirical risk over sample S, i.e.If S is separable with respect $H$, there exists a hypothesis $h^*$with true error 0. For every sample, we can get the coordinate of it, so each time we get an example we can update the maximum $x_1$ and $x_2$ of them, which means we can always find a rectangle enclosing all positive examples in the training set. In this way, we can find a $h^*$ that $L_s(h) = 0$, so that \\
+     \begin{center}
+     $ERM_H(S) \in argmin_{h^* \in H}L_s(h)$
+     \end{center}
+     
+     \item 
+     let $R^* = R(a_1^*, b_1^*, a_2^*, b_2^*)$ be the rectangle
+that generates the labels, and let $f$ be the corresponding hypothesis. \\
+As we can see the picture below, errors can appear in R - R', so $R(R') > \epsilon$. Let $a_1 \geq a_1^*$ be a number such that the probability mass (with respect to D) of the rectangle $R_1 = R(a_1^*, a_1; a_2^*, b_2^*)$ is exactly $\frac{\epsilon}{4}$. Similarly, we can set $R_2,R_3,R_4$(denoted in hint) are all exactly $\frac{\epsilon}{4}$.Assume the number of examples is m, therefore,
+\begin{center}
+$P[R(R') > \epsilon] \leq \sum_{i = 1}^4 P[{R' misses R_i}]$ \\[0.15in]
+$P[R(R') > \epsilon] \leq 4(1 - \frac{\epsilon}{4})^m \leq 4e^{-\frac{\epsilon m}{4}}$
+\\[0.15in]
+$4e^{-\frac{\epsilon m}{4}} \leq \delta$, 
+$m \geq \frac{4}{\epsilon}log\frac{4}{\delta}$
+
+\end{center}
+So that if A receives a training set of size bigger than  $\frac{4}{\epsilon}log\frac{4}{\delta}$, then, with probability
+of at least 1 - $\delta$, it returns a hypothesis with error of at most $\epsilon$.
+\begin{figure} 
+\centering
+\includegraphics[width=4in,height=2.55in]{ml_2.png}
+\label{fig:graph}
+\end{figure}
+
+     \item 
+     If the class of axis aligned rectangles in $\mathbb{R}^d$, we can easily conclude that the number of the probability mass region of $\mathbb{R}^d$ is 2d, so if A receive a training set of size $\geq \frac{2d}{\epsilon}log\frac{2d}{\delta}$, with probability
+of at least 1 - $\delta$ it returns a hypothesis with error of at most $\epsilon$.
+
+     \item 
+     
+ \end{enumerate}
+ 
+
+
+
+\end{enumerate}
+\end{document}
+

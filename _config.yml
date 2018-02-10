@@ -55,8 +55,8 @@ kramdown:
 
 
 # 评论系统
-# Disqus settings（https://disqus.com/）
-#disqus_username: qiubaiying
+Disqus settings（https://disqus.com/）
+disqus_username: yutongwang
 
 
 
