@@ -1,7 +1,7 @@
 ---
 layout:     post
 title:      Working experience
-subtitle:   Click here to see more
+subtitle:   Web developer | Full stack developer | Project Manager
 date:       2018-06-18
 author:     Elva
 header-img: img/post-bg-ios9-web.jpg
